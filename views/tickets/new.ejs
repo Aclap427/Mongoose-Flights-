@@ -1,0 +1,17 @@
+<link rel='stylesheet' href='/stylesheets/ticket.css' />
+<div class="links"> <a href="/"> Home </a> &nbsp; &nbsp; &nbsp; <a href="/flights"> All flights</a> &nbsp; &nbsp; &nbsp; <a href="/flights/new " id="add"> Add a flight</a>
+</div>
+
+
+<form action="/flights/<%=flightID%>/tickets" method="POST">
+    <h3>Choose your ticket selections below</h3>
+    <div id="container"><label for="ticket"> Choose your preferred seat 
+        (Must be 'A1' thru 'F99')
+        <input name="seat" required pattern="[A-F][1-9]\d?">
+        </label>
+        <label for="price"> Price
+        <input name="price" type="number" min="0" max="400" step="20">
+    </label>
+        <button type="submit" class="submit-button">Buy Ticket</button>
+</form>
+</div>

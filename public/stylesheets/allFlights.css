@@ -1,0 +1,67 @@
+    @import url('https://fonts.googleapis.com/css2?family=Bangers&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Baloo+Tamma+2&display=swap');
+    body {
+        padding: 50px;
+        background-image: url("https://i.imgur.com/TN8SNeX.png?1");
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-color: #4eb2ec;
+    }
+    
+    h1 {
+        font-family: 'Bangers', cursive;
+        font-size: 50px;
+        color: #00B7FF;
+        letter-spacing: 2px;
+    }
+    
+    .addContainer {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        background-color: white;
+        margin-top: 30px;
+        width: 100%;
+        text-align: center;
+        padding: 10px 10px 40px 10px;
+        border-radius: 10px;
+        font-family: 'Baloo Tamma 2', cursive;
+        font-size: 20px;
+        color: rgb(133, 127, 127);
+    }
+    
+    th {
+        font-size: 25px;
+        color: white;
+        background-color: #00709c;
+        border-radius: 5px;
+        justify-content: center;
+    }
+    
+    .button:hover {
+        background-color: white;
+        color: #00B7FF;
+        border: solid medium #00B7FF;
+        border-radius: 5px;
+        font-size: 14px;
+        transition: ease-in-out;
+        transition-delay: .1s;
+    }
+    
+    .input {
+        color: #00B7FF;
+    }
+    
+    a {
+        color: black;
+        font-size: 20px;
+        font-family: 'Baloo Tamma 2', cursive;
+    }
+    
+    a:hover {
+        color: #00538a;
+        font-size: 22px;
+        transition: ease-in-out;
+        transition-delay: .1s;
+    }

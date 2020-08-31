@@ -1,0 +1,105 @@
+<link rel='stylesheet' href='/stylesheets/destination.css' />
+
+<div class="links"> <a href="/"> Home </a> &nbsp; &nbsp; &nbsp; <a href="/flights"> All flights </a>&nbsp; &nbsp; &nbsp; <a href="/flights/new " id="add"> Add a flight </a></div>
+
+<h1> Departure Details </h1>
+<section id="flight-details">
+    <div>
+        <h4>Airline:</h4>
+        <%= flight.airline %>
+    </div>
+    <div>
+        <h4>Airport:</h4>
+        <%= flight.airport %>
+    </div>
+    <div>
+        <h4>Flight No:</h4>
+        <%= flight.flightNo %>
+    </div>
+    <div>
+        <h4>Departs:</h4>
+        <%= flight.departs %>
+    </div>
+</section>
+<h1>Add a Destination</h1>
+<div id="destContainer">
+
+    <form id="add-destination-form" method="POST" action="/flights/<%= flight._id %>/destinations">
+
+        <label>
+        <h4>Destinations:</h4>
+    </label>
+        <select name="airport">
+        <option value="AUS">AUS</option>
+        <option value="DFW">DFW</option>
+        <option value="DEN">DEN</option>
+        <option value="LAX">LAX</option>
+        <option value="SAN">SAN</option>
+    </select><br>
+        <label>
+        <h4>Arrives:</h4>
+        <label for="date">
+            <input type="datetime-local" name="arrival" value="<%= newDate %>" id="button">
+        </label>
+        <button class="submit-button" type="submit">Add Destination</button>
+
+    </form>
+</div>
+<h1>Scheduled Destinations</h1>
+<% if (flight.destinations.length) { %>
+    <table>
+        <thead>
+            <tr>
+                <th>Arrival Date & Time</th>
+                <th>Destination</th>
+                <th>Flight ID</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% flight.destinations.forEach(function(fd) { %>
+                <tr>
+                    <td>
+                        <%= fd.arrival %>
+                    </td>
+                    <td>
+                        <%= fd.airport %>
+                    </td>
+                    <td>
+                        <%= fd.id %>
+                    </td>
+                    <td>
+                        <a href="/flights/<%=flight._id%>/tickets/new">Add Tickets</a>
+
+                    </td>
+                </tr>
+                <% }); %>
+        </tbody>
+    </table>
+    <% } else { %>
+        <h5>No Destinations Selected Yet</h5>
+        <% } %>
+            </div>
+            <% if (tickets.length > 0) { %>
+                <h1>Available Tickets</h1>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Seats</th>
+                            <th>Price</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% tickets.sort((a, b) => a.price - b.price) %>
+                            <% tickets.forEach((ticket) => { %>
+                                <tr>
+                                    <td>
+                                        <%=ticket.seat%>
+                                    </td>
+                                    <td>$
+                                        <%=ticket.price%>.00</td>
+                                </tr>
+                                <% }) %>
+                    </tbody>
+                </table>
+                <% } %>
+                    <br><br>

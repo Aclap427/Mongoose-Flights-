@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' href='/stylesheets/addFlight.css' />
+    <title>Flights</title>
+</head>
+
+<body>
+
+    <div class="links"> <a href="/"> Home </a> &nbsp; &nbsp; &nbsp; <a href="/flights/"> All flights </a></div>
+
+    <div class="addContainer">
+        <h2>Enter a New Flight</h2>
+        <form action="/flights" method="POST">
+            <label>Airline:
+            <select name="airline">
+                <option value="American">American</option>
+                <option value="Delta">Delta</option>
+                <option value="Southwest">Southwest</option>
+                <option value="United">United</option>
+            </select>
+        </label><br>
+            <label>Airport:
+            <select name="airport">
+                <option value="ATL">ATL</option>
+                <option value="DFW">DFW</option>
+                <option value="DEN">DEN</option>
+                <option value="LAX">LAX</option>
+                <option value="SAN">SAN</option>
+                
+            </select>
+        </label><br>
+            <label>Flight Number:
+      <input type="text" name ="flightNo">
+        </select>
+    </label><br>
+            <label for="date">Date:
+                    <input type="datetime-local" name="departs" value="<%= newDate %>">
+                </label>
+            <button class="submit-button" type="submit">Add Flight</button>
+
+        </form>
+    </div>
+</body>
+
+</html>
